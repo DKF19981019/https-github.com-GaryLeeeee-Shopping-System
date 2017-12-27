@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import = "mybean.data.Login" %>
-<%@ page import = "java.util.*;" %>
+<%@ page import = "java.util.*" %>
 <jsp:useBean id="loginBean" class = "mybean.data.Login" scope = "session"/>
-<HTML><HEAD><%@ include file = "head.jsp" %></HEAD>
+<HTML><HEAD><%@include file = "head.jsp" %></HEAD>
 <BODY background = image/back.jpg><font size = 2>
 <div align = "center">
 <%	
@@ -34,9 +34,9 @@
 				showGoods = goods.substring(0, index);
 			}
 			buyGoods.append(n + ":" + showGoods);
-			String del = "<form action = 'deleteServlet' method = 'post'>" +
-				"<input type = 'hidden' name = 'delete' value = "+ goods +">" +
-				"<input type = 'submit' value = '删除'></form>";
+			String del = "<form action='deleteServlet' method='post'>" +
+				"<input type='hidden' name='delete' value="+ goods +">" +
+				"<input type='submit' value='删除'></form>";
 			out.print("<tr><td>" + showGoods + "</td>");
 			out.print("<td>" + del + "</td></tr>");
 		}

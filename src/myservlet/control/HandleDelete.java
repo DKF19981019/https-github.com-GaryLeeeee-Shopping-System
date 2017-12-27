@@ -10,7 +10,7 @@ public class HandleDelete extends HttpServlet{
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException{
-		request.setCharacterEncoding("gb2312");
+		request.setCharacterEncoding("utf-8");
 		String delete = request.getParameter("delete");
 		Login loginBean = null;
 		HttpSession session = request.getSession(true);
@@ -22,7 +22,7 @@ public class HandleDelete extends HttpServlet{
 				LinkedList<String> car = loginBean.getCar();
 				car.remove(delete);
 		} catch (Exception exp) {
-			response.sendRedirect("login.jsp");;			//重定向到登录页面
+			response.sendRedirect("login.jsp");			//重定向到登录页面
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("lookShoppingCar.jsp");
 		dispatcher.forward(request, response);				//转发

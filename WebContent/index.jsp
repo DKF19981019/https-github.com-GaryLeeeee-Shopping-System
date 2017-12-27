@@ -8,8 +8,8 @@
 <%@include file="head.jsp" %>
 </head>
 <body>
-<center><h1><font size=4 color=blue></font>"青山不老绿水无忧"化妆品销售网</h1>
-<img src="" width=600 height=200></img>
+<center><h1>h9小卖部</h1>
+<img src="欢迎界面_08.jpg" width=750 height=750></img>
 
 </center>
 </body>

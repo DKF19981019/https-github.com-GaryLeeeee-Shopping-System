@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.sql.*"%>
 <%@include file="head.jsp" %></head>
-<BODY background=image/back.jpg><font size=2>
+<BODY background=image/back.jpg><center><font size=2>
 <div style="align:center">
 <%   try{  Class.forName("com.mysql.jdbc.Driver");
 }
@@ -15,7 +15,7 @@
     	 sql=con.createStatement();
     	 //读取classify表，获得分类：
     	 rs=sql.executeQuery("SELECT * FROM classify");
-    	 out.print("<form action='queryServlet'method='post'>");
+    	 out.print("<form action='queryServlet' method='post'>");
     	 out.print("<select name='fenleiNumber'>");
     	 while(rs.next()){
     		 int id=rs.getInt(1);
@@ -32,6 +32,7 @@
      }
 %>
 </div>
-</font></BODY>
+</font>
+</center></BODY>
 </body>
 </html>
