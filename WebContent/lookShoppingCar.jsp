@@ -3,8 +3,17 @@
 <%@ page import = "java.util.*" %>
 <jsp:useBean id="loginBean" class = "mybean.data.Login" scope = "session"/>
 <HTML><HEAD><%@include file = "head.jsp" %></HEAD>
-<BODY background = image/back.jpg><font size = 2>
-<div align = "center">
+<style>
+body
+  {
+    background-image:url(购物车界面_原图.png);
+    width:100%;
+    height:200%;
+    background-size: cover;
+  }
+</style>
+<BODY><font size = 2>
+<div align = "center" style="top:200px">
 <%	
 	if(loginBean == null){
 		response.sendRedirect("login.jsp");		//重定向到登录界面
@@ -42,11 +51,15 @@
 		}
 		out.print("</table>");
 		String orderForm = "<form action = 'buyServlet' method = 'post'>" +
-			"<input type = 'hidden' name = 'buy' value = >" + buyGoods + ">" +
+			"<input type = 'hidden' name = 'buy' value = " + buyGoods + ">" +
 			"<input type = 'hidden' name = 'price' value = " + priceSum + ">" +
 			"<input type = 'submit' value = '生成订单'></form>";
 			out.print(orderForm);
 	}
 %>
+<a href="lookOrderForm.jsp"><input type="image"
+						src="查看订单.png" class="btn btn-default" data-toggle="tooltip"
+						data-placement="left" title="返回顶部"
+						style="position: absolute; right: 50px; top: 2800px; width: 70; height: 70"></a>
 </div></font>
 </BODY></HTML>

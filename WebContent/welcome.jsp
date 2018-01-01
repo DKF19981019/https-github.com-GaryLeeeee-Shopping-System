@@ -11,6 +11,9 @@
 <title>欢迎界面</title>
 </head>
 <body style="background-image:url(主界面_04.jpg)">
-<a href="index.jsp"><input type="button" value="开始购物！" class="btn btn-danger" style="position: absolute; left: 810px; top:750px;width:300px;height:100px;font-size:35px"></a>
+<a href="index.jsp"><input type="button" title="开始购物！" value="开始购物！" class="btn btn-danger" data-toggle="tooltip" data-placement="left" style="position: absolute; left: 810px; top:750px;width:300px;height:100px;font-size:35px"></a>
+<script>
+   $(function () { $("[data-toggle='tooltip']").tooltip(); });
+</script>
 </body>
 </html>

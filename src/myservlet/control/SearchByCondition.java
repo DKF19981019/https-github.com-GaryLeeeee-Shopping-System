@@ -15,7 +15,7 @@ public class SearchByCondition extends HttpServlet{
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException{
-		request.setCharacterEncoding("gb2312");
+		request.setCharacterEncoding("utf-8");
 		String searchMess = request.getParameter("searchMess");
 		String radioMess = request.getParameter("radio");
 		if(searchMess == null || searchMess.length() == 0){
@@ -24,12 +24,12 @@ public class SearchByCondition extends HttpServlet{
 		}
 		String condition = "";
 		if(radioMess.equals("cosmetic_number")){
-			condition = "SELECT * FROM cosmeticForm where cosmetic_name = '" + searchMess + "'";
+			condition = "SELECT * FROM cosmeticForm where cosmetic_number = '" + searchMess + "'";
 		}
 		else if(radioMess.equals("cosmetic_name")) {
 			condition = "SELECT * FROM cosmeticForm where cosmetic_name LIKE '%" + searchMess + "%'";
 		}
-		else if(radioMess.equals("cosmetic_name")){
+		else if(radioMess.equals("cosmetic_price")){
 			double max = 0, min = 0;
 			String regex = "[^0123456789.]";
 			String[] priceMess = searchMess.split(regex);
@@ -67,7 +67,7 @@ public class SearchByCondition extends HttpServlet{
 			session.setAttribute("dataBean", dataBean);
 		}
 		String uri = "jdbc:mysql://127.0.0.1/shop?" + 
-			"user = root & password = 19961219 & characterEncoding = gb2312";
+			"user=root&password=19961219&characterEncoding=utf-8";
 		try{
 			con = DriverManager.getConnection(uri);
 			Statement sql = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
@@ -77,7 +77,8 @@ public class SearchByCondition extends HttpServlet{
 			rowSet.populate(rs);
 			dataBean.setRowSet(rowSet);				//行集数据存储在dataBean中
 			con.close();							//关闭连接
-		}catch (SQLException exp) {}
+		}catch (SQLException exp) {
+			exp.printStackTrace();}
 		response.sendRedirect("byPageShow.jsp");	//重定向到byPageShow.jsp
 	}
 	public void doGet(HttpServletRequest request, HttpServletResponse response)

@@ -1,16 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<jsp:useBean id="loginBean" class="mybean.data.Login" scope="session"/>
 <html>
-<head>
+<head><%@include file="head.jsp" %></head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>首页</title>
-<%@include file="head.jsp" %>
-</head>
-<body>
-<center><h1>h9小卖部</h1>
-<img src="欢迎界面_08.jpg" width=750 height=750></img>
+<title>视图</title>
+<style>
+body
+  {
+    background-image:url(主界面_原图.jpg);
+    width:100%;
+    height:200%;
+    background-size: cover;
+  }
 
-</center>
-</body>
+</style>
+<BODY>
+<a href="lookOrderForm.jsp"><input type="image"
+						src="查看订单.png" class="btn btn-default" data-toggle="tooltip"
+						data-placement="left" title="返回顶部"
+						style="position: absolute; right: 50px; top: 5670px; width: 70; height: 70"></a>
+<!-- <img src="欢迎界面_08.jpg" width=750 height=750></img> -->
+</BODY>
 </html>

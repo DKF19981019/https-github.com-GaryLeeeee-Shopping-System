@@ -4,8 +4,17 @@
 <%@ page import="java.sql.*"%>
 <html>
 <HEAD><%@include file="head.jsp"%></HEAD>
-<BODY background=image/back.jpg>
-	<div align="center">
+<style>
+body
+  {
+    background-image:url(查看订单界面_原图.jpg);
+    width:100%;
+    height:200%;
+    background-size: cover;
+  }
+</style>
+<BODY>
+	<div align="center" style="position:relative;top:600px;">
 		<%
 			if (loginBean == null) {
 				response.sendRedirect("login.jsp");//重定向到登陆页面

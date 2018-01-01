@@ -10,10 +10,10 @@
 		当前显示的内容是：
 		<table style="border:2">
 			<tr>
-				<th>化妆品标识号</th>
-				<th>化妆品名称</th>
-				<th>化妆品制造商</th>
-				<th>化妆品价格</th>
+				<th>商品标识号</th>
+				<th>商品名称</th>
+				<th>商品制造商</th>
+				<th>商品价格</th>
 				<th>查看详情</th>
 				<td><font color=blue>添加到购物车</font>
 			</tr>

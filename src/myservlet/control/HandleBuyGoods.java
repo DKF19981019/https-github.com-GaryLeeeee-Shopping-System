@@ -14,8 +14,9 @@ public class HandleBuyGoods extends HttpServlet{
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException{
-		request.setCharacterEncoding("gb2312");
+		request.setCharacterEncoding("utf-8");
 		String buyGoodsMess = request.getParameter("buy");
+		System.out.println(buyGoodsMess);
 		if(buyGoodsMess == null || buyGoodsMess.length() == 0) {
 			fail(request, response, "购物车没有物品，无法生成订单");
 			return;
@@ -37,7 +38,7 @@ public class HandleBuyGoods extends HttpServlet{
 			response.sendRedirect("login.jsp"); 			//重定向到登录界面
 		}
 		String uri = "jdbc:mysql://127.0.0.1/shop?" + 
-				"user = root & password = 19961219 & characterEncoding = gb2312";
+				"user=root&password=19961219&characterEncoding = gb2312";
 		Connection con;
 		PreparedStatement sql;
 		try {	con = DriverManager.getConnection(uri);
