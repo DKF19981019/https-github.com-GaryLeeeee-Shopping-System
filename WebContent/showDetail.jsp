@@ -32,13 +32,14 @@
 				sql = con.createStatement();
 				String cdn = "SELECT * FROM cosmeticForm where cosmetic_number='" + numberID + "'";
 				rs = sql.executeQuery(cdn);
-				out.print("<table border=2>");
+				//bootstrap的表格-悬停
+				out.print("<table class='table table-striped table-bordered table-hover  table-condensed' style='width:50%'>");
 				out.print("<tr>");
 				out.print("<th>产品号");
 				out.print("<th>名称");
 				out.print("<th>制作商");
 				out.print("<th>价格");
-				out.print("<th><font color=blue>放入购物车</font>");
+				out.print("<th>放入购物车");
 				out.print("<TR>");
 				String picture = "welcome.jpg";
 				String detailMess = "";

@@ -5,18 +5,29 @@
 	scope="session" />
 <%@include file="head.jsp"%></head>
 <html>
+<style>
+body
+  {
+    background-image:url(查询商品界面_原图.jpg);
+    width:100%;
+    height:200%;
+    background-size: cover;
+  }
+</style>
 <Body background=image/back.jpg>
 	<center>
+	<div style="position:relative;top:700px;">
 		当前显示的内容是：
-		<table style="border:2">
-			<tr>
+<!-- 		bootstrap的表格-悬停 -->
+		<table class="table table-striped table-bordered table-hover  table-condensed" style="width:50%">
+			<thead>
 				<th>商品标识号</th>
 				<th>商品名称</th>
 				<th>商品制造商</th>
 				<th>商品价格</th>
 				<th>查看详情</th>
-				<td><font color=blue>添加到购物车</font>
-			</tr>
+				<th>添加到购物车</font>
+			</thead>
 			<jsp:setProperty name="dataBean" property="pageSize" param="pageSize" />
 			<jsp:setProperty name="dataBean" property="currentPage"
 				param="currentPage" />
@@ -101,7 +112,8 @@
 			</td>
 			</tr>
 		</Table>
-
+	</div>
 	</center>
+	
 </body>
 </html>

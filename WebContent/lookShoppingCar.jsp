@@ -6,14 +6,14 @@
 <style>
 body
   {
-    background-image:url(购物车界面_原图.png);
+    background-image:url(购物车界面_原图.jpg);
     width:100%;
     height:200%;
     background-size: cover;
   }
 </style>
 <BODY><font size = 2>
-<div align = "center" style="top:200px">
+<div align = "center" style="position:relative;top:700px;">
 <%	
 	if(loginBean == null){
 		response.sendRedirect("login.jsp");		//重定向到登录界面

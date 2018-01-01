@@ -14,7 +14,7 @@ body
   }
 </style>
 <BODY>
-	<div align="center" style="position:relative;top:600px;">
+	<div align="center" style="position:relative;top:700px;">
 		<%
 			if (loginBean == null) {
 				response.sendRedirect("login.jsp");//重定向到登陆页面
@@ -38,12 +38,12 @@ body
 				sql = con.createStatement();
 				String cdn = "SELECT id,mess,sum FROM orderform where logname='" + loginBean.getLogname() + "'";
 				rs = sql.executeQuery(cdn);
-				out.print("<table border=2>");
-				out.print("</tr>");
+				out.print("<table class='table table-striped table-bordered table-hover  table-condensed' style='width:45%'>");
+				out.print("<thead>");
 				out.print("<th width=100>" + "订单号");
 				out.print("<th width=100>" + "信息");
 				out.print("<th width=100>" + "价格");
-				out.print("</TR>");
+				out.print("</thead>");
 				while (rs.next()) {
 					out.print("<tr>");
 					out.print("<td>" + rs.getString(1) + "</td>");
