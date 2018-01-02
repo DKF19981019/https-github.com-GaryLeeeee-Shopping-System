@@ -37,10 +37,10 @@ public class PutGoodsToCar extends HttpServlet{
 //			out.print("<html><HEAD><%@include file = 'head.jsp'%></HEAD>");
 			out.println("<body>");
 			out.println("<h2>"+goods+"放入购物车</h2>");
-//			out.println("查看购物车或返回浏览化妆品<br>");
+//			out.println("查看购物车或返回浏览商品<br>");
 			out.println("<a href=lookShoppingCar.jsp>查看购物车</a>");
-			out.println("<br><a href=byPageShow.jsp>浏览化妆品</a>");
-			out.println("<br><a href=head.jsp>返回</a>");
+			out.println("<br><a href=byPageShow.jsp>浏览商品</a>");
+			out.println("<br><a href=index.jsp>返回</a>");
 			out.println("</body></html>");
 		}
 		catch(IOException exp) {}

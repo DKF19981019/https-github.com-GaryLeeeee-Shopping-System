@@ -4,7 +4,7 @@
 <html>
 <head><%@include file="head.jsp" %></head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>视图</title>
+<title>首页</title>
 <style>
 body
   {
@@ -25,10 +25,11 @@ body
 				<td><a href="index.jsp"><img src="透明图片.gif" width=40
 						height=30 title="首页"
 						style="position: absolute; left: 370px; top: 120px;"></a></td>
-<a href="lookOrderForm.jsp"><input type="image"
-						src="返回顶部.gif" class="btn btn-default" data-toggle="tooltip"
+<a href="index.jsp"><input type="image"
+						src="返回顶部.gif" data-toggle="tooltip"
 						data-placement="left" title="返回顶部"
 						style="position: absolute; right: 50px; top: 5670px; width: 70; height: 70"></a>
+
 <!-- <img src="欢迎界面_08.jpg" width=750 height=750></img> -->
 </BODY>
 </html>

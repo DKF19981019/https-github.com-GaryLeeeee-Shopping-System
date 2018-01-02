@@ -93,7 +93,7 @@ public class SearchByCondition extends HttpServlet{
 			out.println("<html><body>");
 			out.println("<h2>" + backNews + "</h2>");
 			out.println("返回：");
-			out.println("<a href = searchCosmetic.jsp>查询化妆品</a>");
+			out.println("<a href = index.jsp>首页</a>");
 			out.println("</body></html>");
 		} catch (IOException exp) {}
 	}

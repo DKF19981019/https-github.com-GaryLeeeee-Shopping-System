@@ -23,7 +23,10 @@ public class HandleRegister extends HttpServlet {
 		super.init(config);
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-		}catch(Exception e) {}
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+		}
 	}
 	
     public String HandleString(String s) {
@@ -66,7 +69,7 @@ public class HandleRegister extends HttpServlet {
 	String backNews="";
 	try {
 		con=DriverManager.getConnection(url);
-		String insertCondition="INSERT INTO user VALUE( , , , ,)";
+		String insertCondition="INSERT INTO user VALUE(?,?,?,?,?)";
 		sql=con.prepareStatement(insertCondition);
 		if(boo) {
 			sql.setString(1, HandleString(logname));
@@ -94,7 +97,8 @@ public class HandleRegister extends HttpServlet {
 		userBean.setBackNews(backNews);
 		
 	}
-	RequestDispatcher dispatcher=request.getRequestDispatcher("inputRegisterMess.jsp");
+//	RequestDispatcher dispatcher=request.getRequestDispatcher("inputRegisterMess.jsp");
+	RequestDispatcher dispatcher=request.getRequestDispatcher("index.jsp");
 	dispatcher.forward(request, response);
 		
 	

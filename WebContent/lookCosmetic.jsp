@@ -43,5 +43,13 @@ body
 </div>
 </font>
 </center></BODY>
+	<a href="lookShoppingCar.jsp"><img src="透明图片.gif" width=200
+		height=200 title="购物车"
+		style="position: absolute; left: 470px; top: 320px;"></a>
+	<a href="lookOrderForm.jsp"><img src="透明图片.gif" width=200
+		height=200 title="查看订单"
+		style="position: absolute; left: 850px; top: 320px;"></a>
+	<a href="index.jsp"><img src="透明图片.gif" width=200 height=200
+		title="返回主页" style="position: absolute; left: 1250px; top: 320px;"></a>
 </body>
 </html>

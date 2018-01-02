@@ -6,6 +6,7 @@
 <Body background=image/back.jpg>
 	<center>
 		<%
+		request.setCharacterEncoding("utf-8");
 			if (loginBean == null) {
 				response.sendRedirect("login.jsp");
 			} else {

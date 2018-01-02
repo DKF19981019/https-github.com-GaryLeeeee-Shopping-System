@@ -2,11 +2,15 @@
     pageEncoding="UTF-8"%>
 <jsp:useBean id="userBean" class="mybean.data.Register" scope="request" />
 <head>
-<%@include file="head.jsp" %>
+<%-- <%@include file="head.jsp" %> --%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>注册页面</title>
 </head>
-<body bgcolor=image/back.jpg><font size=2>
+<body><font size=2>
+	<div
+		style="border: 2px solid gray; font-size: 100%; background-color: Gainsboro; text-align: right">
+		<a href="index.jsp">主页</a> <a href="inputRegisterMess.jsp">注册</a> <a href="login.jsp">登陆</a>
+	</div>
 <div align="center">
 <form action="registerServlet" method="post" name=form>
 <table>用户名由字母、数字、下划线构成，*注释的项必须填写。

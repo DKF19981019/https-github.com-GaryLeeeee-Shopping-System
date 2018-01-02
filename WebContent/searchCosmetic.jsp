@@ -14,4 +14,5 @@
 	<br><Input type = submit name = "g" value = "提交">
 </FORM>
 </div>
-</font></BODY></HTML>
+</font>
+</BODY></HTML>

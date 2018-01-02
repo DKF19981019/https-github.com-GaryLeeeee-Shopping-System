@@ -43,7 +43,8 @@ public class HandleLogin extends HttpServlet {
 				if (m == true) {
 					// 调用成功的方法：
 					success(request, response, logname, password);
-					RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp"); // 转发
+//					RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp"); // 转发
+					RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp"); // 转发
 					dispatcher.forward(request, response);
 				}
 			} else {

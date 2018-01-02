@@ -7,12 +7,108 @@
 	rel="stylesheet">
 <script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
 <body>
-
+	<!-- 超级注册start -->
+	<div class="modal fade" id="myRegister" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button data-dismiss="modal" class="close" type="button">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">注册窗口</h4>
+				</div>
+				<div class="modal-body">
+					<table>
+						<div align="center">
+							<form action="registerServlet" method="post" name=form>
+								<table>
+									用户名由字母、数字、下划线构成，*注释的项必须填写。
+									<tr>
+										<td>*用户名称</td>
+										<td><input type=text name="logname" class="form-control"></td>
+										<td>*用户密码</td>
+										<td><input type=password name="password"class="form-control"></td>
+									</tr>
+									<tr>
+										<td>*重复密码：</td>
+										<td><input type=password name="again_password" class="form-control"></td>
+										<td>联系电话：</td>
+										<td><input type=text name="phone" class="form-control"></td>
+									</tr>
+									<tr>
+										<td>邮寄地址：</td>
+										<td><input type=text name="address" class="form-control"></td>
+										<td>真实姓名：</td>
+										<td><input type=text name="realname" class="form-control"></td>
+										<td><input type=submit name="g" value="提交" class="btn btn-primary"></td>
+									</tr>
+								</table>
+							</form>
+						</div>
+				</div>
+				<!-- <div align="center"> -->
+				<%-- 登录反馈信息：<jsp:getProperty name="loginBean" property="backNews"/> --%>
+				<%-- <br>登录名称：<jsp:getProperty name="loginBean" property="logname"/> --%>
+				<!-- </div> -->
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+	<!-- 超级注册end -->
+	<!-- 超级登录start -->
 	<div
 		style="border: 2px solid gray; font-size: 100%; background-color: Gainsboro; text-align: right">
-		<a href="inputRegisterMess.jsp">注册</a> <a href="login.jsp">登陆</a>
+		<!-- 		以下一行为用户名 -->
+<!-- 		用户名: -->
+<%-- 		<jsp:getProperty name="loginBean" property="logname" /> --%>
+<!-- 		<a href="index.jsp">主页</a>  -->
+<!-- 		<a href="inputRegisterMess.jsp">注册</a> <a href="login.jsp">登陆</a> -->
+		<button type="button" class="btn btn-primary" data-toggle="modal"
+			data-target="#myModal">登录</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal"
+			data-target="#myRegister">注册</button>
 	</div>
-<!-- 	以下这行是bootstrap实现控件在同一行！！！！！！！！！！！！！！！！！ -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button data-dismiss="modal" class="close" type="button">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">登录窗口</h4>
+				</div>
+				<div class="modal-body">
+					<table>
+						<FORM action="loginServlet" method="post">
+							<tr>
+								<td>登录名称：<Input type=text name="logname"
+									class="form-control"></td>
+							</tr>
+							<tr>
+								<td>输入密码：<Input type=password name="password"
+									class="form-control"></td>
+							</tr>
+					</table>
+					<Input type=submit class="btn btn-primary" name="g" value="提交">
+					<button data-dismiss="modal" class="btn btn-default" type="button">关闭</button>
+					</FORM>
+
+				</div>
+				<!-- <div align="center"> -->
+				<%-- 登录反馈信息：<jsp:getProperty name="loginBean" property="backNews"/> --%>
+				<%-- <br>登录名称：<jsp:getProperty name="loginBean" property="logname"/> --%>
+				<!-- </div> -->
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+	<!-- 超级登录end -->
+
+	<!-- 	以下这行是bootstrap实现控件在同一行！！！！！！！！！！！！！！！！！ -->
 	<div align="center" class="form-inline">
 
 		<FORM action="searchByConditionServlet" Method="post">
@@ -30,13 +126,12 @@
 			<!-- 					商品价格 -->
 			<!-- 				</label> -->
 			<!-- 			</div> -->
-<!-- 			下拉列表实现单选 -->
-			<select class="form-control" name="radio" style="width:7%">
+			<!-- 			下拉列表实现单选 -->
+			<select class="form-control" name="radio" style="width: 7%">
 				<option value="cosmetic_name">商品名称</option>
 				<option value="cosmetic_number">商品版本号</option>
 				<option value="cosmetic_price">商品价格</option>
-			</select>
-			<Input type=text name="searchMess" placeholder="请输入查询内容"
+			</select> <Input type=text name="searchMess" placeholder="请输入查询内容"
 				class="form-control" style="width: 10%"><Input type=submit
 				name="g" value="查询" class="btn btn-primary"><br>
 
@@ -50,11 +145,11 @@
 				<td><a href="lookShoppingCar.jsp"><input type="image"
 						src="购物车图标.gif" class="btn btn-default" data-toggle="tooltip"
 						data-placement="left" title="查看购物车"
-						style="position: fixed; right: 50px; top: 150px; width: 70; height: 70"></a></td>
+						style="position: fixed; right: 30px; top: 350px; width: 70; height: 70"></a></td>
 				<td><a href="lookOrderForm.jsp"><input type="image"
 						src="查看订单.png" class="btn btn-default" data-toggle="tooltip"
 						data-placement="left" title="查看订单"
-						style="position: fixed; right: 50px; top: 300px; width: 70; height: 70"></a>
+						style="position: fixed; right: 30px; top: 450px; width: 70; height: 70"></a>
 					<script>
 						$(function() {
 							$("[data-toggle='tooltip']").tooltip();
@@ -64,6 +159,10 @@
 			</tr>
 		</table>
 	</div>
+
+
+
+
 
 </body>
 </html>
